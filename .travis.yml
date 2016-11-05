@@ -1,0 +1,26 @@
+branches:
+  only:
+  - master
+language: python
+sudo: false
+noticications:
+  email: false
+python:
+- 2.7
+install:
+- git submodule update --init --recursive
+- wget http://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -O miniconda.sh;
+- bash miniconda.sh -b -p $HOME/conda
+- export PATH="$HOME/conda/bin:$PATH
+- conda config --set always_yes yes
+- conda install pyymal
+- conda info -a
+- conda env create
+- export PATH="$HOME/conda/envs/blog/bin:$PATH"
+- conda list
+script:
+- make html
+after_success: "./deploy.sh"
+env:
+  global:
+    secure: wU+FoHEBtc76oC8+SYQd/yy288UJUp9R8g2EY4NDNFoMUL3ak5tj0+ISUOyYjjNIrMCIv8Vqhf5j5lhKI6SRsKaV40uhQv8/UxH2lNaNiZAQ16Ts1nvPwL0ts+aWdYJ0j0UHR6t5YJ296Rjcww4WQplq0+PGOpnBxPufjLvyP/TMpcNe6NPrvJlLjs+qPjt+Rk6K10ULg06Jh1G/UN1+5aPS3N3JTu6zr5/NOvxbcMPRemgfn26knuqP1Ps3vkAo9Xm9YsqSgJekVGlmpfagyQFaupBdVvaBIEfEUbvwSxABBg43wWzsqYrUpPobiEpaao0fbISsBLP0MHD6rLm/gm6vBoXRmBQix5BPPi+pWReW0YFH/67A4opQ8fQKjo2pDK94dV0qdD+xmQyTYn8Yl9YMjc1OMTpUWqNy1C1NJobQoypNI+Au6AOdNumXSWDD0nIVPPLj8/FXxK7AcDounWbVNgSHzD6TSO784XBg/3PMUejr2RI8FeYMHrUPpoJGfv5QJO8FuzCHaAslvrU3iUBtfS9e36EvLVJZTWOEwbkOPXrKMl8ped49lYQIdN6adUgz6VUr1VN0La8N3jGejyfjOV93xzGgXeD2GnpP4WuTgimLTviZ+LPHw3kKkaV7zWU8osHnHbd/NYoHiRFdR+shRw84vijQ5ruLyaeYoVM=

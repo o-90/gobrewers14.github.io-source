@@ -1,0 +1,16 @@
+name: blog
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=2.7
+  - jupyter
+  - nbconvert
+  - urllib3
+  - pip:
+      - pelican>=3.6.0
+      - Markdown==2.6.2
+      - jsonschema==2.4.0
+      - mistune==0.5.1
+      - pylint
