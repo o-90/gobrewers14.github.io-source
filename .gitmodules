@@ -1,7 +1,7 @@
 [submodule "pelican-plugins"]
     path = pelican-plugins
-    url = git://github.com/getpelican/pelican-plugins.git
+    url = git@github.com/getpelican/pelican-plugins.git
 
 [submodule "nice-blog"]
     path = nice-blog
-    url = https://github.com/gobrewers14/nice-blog.git
+    url = git@github.com:gobrewers14/nice-blog.git

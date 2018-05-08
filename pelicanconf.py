@@ -6,7 +6,7 @@ LOAD_CONTENT_CACHE = False
 
 
 AUTHOR = u'John Martinez'
-SITENAME = u'cache_money_hoes'
+SITENAME = u'strapped_for_cache'
 SITEURL = ''
 
 
